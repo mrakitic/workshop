@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Osvit predavanja</title>
+
+    <meta charset="utf-8" />
+    <meta name="description" content="Tečaj web programiranja" />
+    <meta name="author" content="Osvit" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="main.js"></script>
+  </head>
+
+  <body onload="getJSON('./todo.json', renderTodoCards)">
+    <main class="main wrapper">
+      <header class="header">
+        <h1>My To-Do List</h1>
+        <button onclick="clearAllTodoCards()" class="btn">Clear all</button>
+      </header>
+      <div class="new">
+        <input
+          onchange="filterTodoCards()"
+          id="js-searchbar"
+          class="input"
+          type="text"
+        />        
+        <button onclick="addItem()" class="add" class="btn">Add</button>
+      </div>
+      <nav class="nav">
+        <ul class="nav-items">
+          <li><button>Upcoming</button></li>
+          <li><button>Past</button></li>
+          <li><button>All</button></li>
+        </ul>
+      </nav>
+      <div id="js-list" class="list"></div>
+    </main>
+  </body>
+</html>
